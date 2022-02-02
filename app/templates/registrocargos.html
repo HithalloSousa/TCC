@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<form action="{{ url_for('registrocargos') }}" method="POST">
+    <div class="container">
+        <div class=" card my-5">
+            <div class="card-header">Cadastro de Cargo</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <label class="control-label">Descrição *</label>
+                        <input type="text" name="descricao" class="form-control" placeholder="Descrição" required>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Média Salarial *</label>
+                        <input type="number" name="salario" class="form-control" placeholder="0" required>
+                    </div>
+                </div> 
+            </div>           
+        </div>    
+        <div class="form-detail-buttons mt-2">
+            <div class="form-group">
+                <div class="d-flex flex-row-reverse">
+                    <button type="submit" class="btn btn-outline-primary">Cadastrar</button> 
+                    <a href="{{ url_for('cargos') }}" class="btn btn-outline-secondary mr-1">Voltar</a>
+                </div>
+            </div>
+        </div>    
+    </div>         
+</form>
+{% endif %}  
+{% endblock %}

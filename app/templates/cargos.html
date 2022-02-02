@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-5">
+        {% if current_user.is_authenticated %}
+        <div class="btn-toolbar justify-content-between mt-5">
+            <div class="btn-group">
+                <a href="{{ url_for('registrocargos') }}" class="btn btn-primary">Novo</a>
+            </div>
+            <div class="input-group">
+                <a href="{{ url_for('rotinas') }}" class="btn btn-outline-secondary">Voltar</a>
+            </div>
+        </div>   
+        {% endif %}  
+
+        <div class="card mt-1">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <colgroup>
+                        <col style="width: 10%;" />
+                        <col style="width: 60%;" />
+                        <col style="width: 30%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="text-left sorting" data-column="">ID</th>
+                            <th class="text-left sorting" data-column="">Descrição</th>
+                            <th class="text-left sorting" data-column="">Média Salarial</th>
+                        </tr>
+                    </thead>
+                    {% for cargo in cargos %}
+                    <tbody>        
+                        <tr class="">
+                            <td class="text-left">{{ cargo.id }}</td>
+                            <td class="text-left">{{ cargo.descricao }}</td>
+                            <td class="text-left">{{ cargo.salario }}</td>
+                            <td class="text-right">
+                                <a class="btn btn-danger btn-sm" href="{{ url_for('deletecargo', id=cargo.id) }}">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>       
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>   
+        </div>  
+    </div>   
+</div> 
+{% endblock %}

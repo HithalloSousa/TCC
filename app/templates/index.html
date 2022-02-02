@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+        <div class="col-lg-6">
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="../static/img/card/img2.png" alt="">
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-6">
+            <h1 class="font-weight-light">Sistema de Ponto Anti-Fraude</h1>
+            <p style="text-align: justify;">Controle de ponto em tempo real, fechamento em poucos minutos e sem surpresa no fim do mês. Ponto eletrônico de acordo com as portarias 1510 e 373 do Ministério do Trabalho e Emprego e a LGPD.</p>
+            <a class="btn btn-primary" href="{{ url_for('controle_acesso') }}">Controle de Acesso</a>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-primary my-5 py-4 text-center">
+        <div class="card-body">
+            <p class="text-white m-0">Junte-se a milhares de clientes satisfeitos que fazem a gestão de seus times com SafePoint</p>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row" id="servicos">
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Econômico</h2>
+                    <p class="card-text">Gera economia e preserva a natureza, pois não necessita de papel para registro.</p>
+                </div>
+                <!--
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-sm">+ Informações</a>
+                </div>
+                -->
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Seguro</h2>
+                    <p class="card-text">O reconhecimento facial é a forma mais segura para registro de pontos.</p>
+                </div>
+                <!--
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-sm">+ Informações</a>
+                </div>
+                -->
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Rápido</h2>
+                    <p class="card-text">Sem necessidade de inserir senhas, os colaboradores evitam filas todos os dias.</p>
+                </div>
+                <!--
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary btn-sm">+ Informações</a>
+                </div>
+                -->
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+
+    </div>
+    <!-- /.row -->
+
+    <!-- parceiros -->
+    <div class="container-fluid py-4 bg-parceiros" id="parceiros">
+        <div class="py-2">
+            <div class="container">
+                <header class="col-md-12">                      
+                    <h2 class="text-center">Conheça nossos parceiros
+                          <span class="underline"></span>                      
+                    </h2>
+                </header>
+                <div class="row py-4">
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2 padding-parceiros">
+                      <div class="card sombra">
+                          <div class="card-body">
+                              <a href="#">
+                                  <img src="http://placehold.it/144x144" class="img-fluid mx-auto d-block" alt="">
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.parceiros -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; SafePoint 2020</p>
+        <a href="#"><i class="fa fa-arrow-up botao-footer-topo" aria-hidden="true"></i></a>        
+    </div>
+    <!-- /.container -->
+</footer>
+{% endblock %}

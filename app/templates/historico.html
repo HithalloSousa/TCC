@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-5">
+        {% if current_user.is_authenticated %}
+        <div class="btn-toolbar justify-content-between mt-5">
+            <div class="input-group">
+                <a href="{{ url_for('rotinas') }}" class="btn btn-outline-secondary">Voltar</a>
+            </div>
+        </div>
+        {% endif %}  
+
+        <div class="card mt-1">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <colgroup>
+                        <col style="width: 10%;" />
+                        <col style="width: 40%;" />
+                        <col style="width: 25%;" />
+                        <col style="width: 25%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="text-left sorting" data-column="">ID</th>
+                            <th class="text-left sorting" data-column="">Usuário</th>
+                            <th class="text-center sorting" data-column="">Data/ Hora Entrada</th>
+                            <th class="text-center sorting" data-column="">Data/ Hora Saída</th>                            
+                        </tr>
+                    </thead>
+                    {% for historico in historicos %}
+                    <tbody>        
+                        <tr class="">                           
+                            <td class="text-left">{{ historico.id }}</td>
+                            <td class="text-left">{{ historico.usario.nome }}</td>                           
+                            <td class="text-center">{{ historico.datahora_acesso_entrada.strftime('%d/%m/%Y %H:%M:%S') if historico.datahora_acesso_entrada != None else '-' }}</td>
+                            <td class="text-center">{{ historico.datahora_acesso_saida.strftime('%d/%m/%Y %H:%M:%S') if historico.datahora_acesso_saida != None else '-'}}</td>
+                        </tr>       
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>   
+        </div>
+    </div>        
+</div>
+{% endblock %}

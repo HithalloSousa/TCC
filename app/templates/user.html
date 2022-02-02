@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-5">
+        <div class="btn-toolbar justify-content-between mt-5">
+            <div class="btn-group">
+                <a href="{{ url_for('cadastrarfotos', id=usuario.id) }}" class="btn btn-primary">Cadastrar Fotos</a>
+            </div>
+            <div class="input-group">
+                <a href="{{ url_for('usuarios') }}" class="btn btn-outline-secondary">Voltar</a>
+            </div>
+        </div>  
+        <div class="card mt-2">
+            <div>
+                <table class="table table-striped">
+                <colgroup>
+                    <col style="width: 5%;" />
+                    <col style="width: 5%;" />
+                    <col style="width: 20%;" />
+                    <col style="width: 15%;" />
+                    <col style="width: 15%;" />
+                    <col style="width: 20%;" />
+                    <col style="width: 20%;" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="text-left" data-column="">ID</th>
+                        <th class="text-left" data-column="">Histórico</th>
+                        <th class="text-left" data-column="">Nome</th>
+                        <th class="text-left" data-column="">CPF</th>
+                        <th class="text-center" data-column="">Data Nasc.</th>
+                        <th class="text-left" data-column="">E-mail</th>
+                        <th class="text-left" data-column="">Cargo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">{{ usuario.id }}</td>
+                        <th class="text-center" style="width:4%" scope="row"> 
+                            <a href="{{ url_for('historico', id=usuario.id) }} "><i class="fa fa-calendar-o" aria-hidden="true" onmouseover="Tip('Clique aqui para ver histórico')" onmouseout="UnTip()"></i></a>
+                        </th>
+                        <td class="text-left">{{ usuario.nome }}</td>
+                        <td class="text-left">{{ usuario.cpf }}</td>
+                        <td class="text-center">{{ usuario.datanascimento }}</td>
+                        <td class="text-left">{{ usuario.email }}</td>
+                        <td class="text-left">{{ usuario.cargo.descricao }}</td>
+                        <td class="text-right">
+                            <a class="btn btn-danger btn-sm" href="{{ url_for('delete', id=usuario.id) }}">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

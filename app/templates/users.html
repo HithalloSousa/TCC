@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-5">
+        {% if current_user.is_authenticated %}
+        <div class="btn-toolbar justify-content-between mt-5">
+            <div class="btn-group">
+                <a href="{{ url_for('registro') }}" class="btn btn-primary">Novo</a>
+            </div>
+            <div class="input-group">
+                <a href="{{ url_for('rotinas') }}" class="btn btn-outline-secondary">Voltar</a>
+            </div>
+        </div>
+        {% endif %}  
+
+        <div class="card mt-1">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <colgroup>
+                        <col style="width: 5%;" />
+                        <col style="width: 5%;" />
+                        <col style="width: 3%;" />                        
+                        <col style="width: 20%;" />
+                        <col style="width: 15%;" />
+                        <col style="width: 15%;" />
+                        <col style="width: 20%;" />
+                        <col style="width: 17%;" />                        
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="text-left sorting" data-column=""></th>
+                            <th class="text-center sorting" data-column="">Histórico</th>
+                            <th class="text-left sorting" data-column="">ID</th>                            
+                            <th class="text-left sorting" data-column="">Nome</th>
+                            <th class="text-left sorting" data-column="">CPF</th>
+                            <th class="text-center sorting" data-column="">Data Nasc.</th>
+                            <th class="text-left sorting" data-column="">E-mail</th>
+                            <th class="text-left sorting" data-column="">Cargo</th>                            
+                        </tr>
+                    </thead>
+                    {% for usuario in usuarios %}
+                    <tbody>        
+                        <tr class="">
+                            <th class="text-center" style="width:4%" scope="row"> 
+                                <a href="{{ url_for('unique', id=usuario.id) }} "><i class="fa fa-pencil" aria-hidden="true" onmouseover="Tip('Clique aqui para poder cadastrar as faces!')" onmouseout="UnTip()"></i></a>
+                            </th>
+                            <th class="text-center" style="width:4%" scope="row"> 
+                                <a href="{{ url_for('historico', id=usuario.id) }} "><i class="fa fa-calendar-o" aria-hidden="true" onmouseover="Tip('Clique aqui para ver histórico')" onmouseout="UnTip()"></i></a>
+                            </th>
+                            <td class="text-left">{{ usuario.id }}</td>                            
+                            <td class="text-left">{{ usuario.nome }}</td>
+                            <td class="text-left">{{ usuario.cpf }}</td>
+                            <td class="text-center">{{ usuario.datanascimento.strftime('%d/%m/%Y') }}</td>
+                            <td class="text-left">{{ usuario.email }}</td>
+                            <td class="text-left">{{ usuario.cargo.descricao }}</td>                          
+                            <td class="text-right">
+                            <a class="btn btn-danger btn-sm" href="{{ url_for('delete', id=usuario.id) }}">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                            </td>
+                        </tr>       
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>   
+        </div>
+    </div>        
+</div>
+{% endblock %}

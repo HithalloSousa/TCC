@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-color">
+    <div class="container">    
+        <a href="{{ url_for('index') }}">
+            <img id="img_logo" src="../static/img/logomarca/safepoint.png" height="60" alt="">
+        </a>    
+        {% if not current_user.is_authenticated %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#parceiros">Parceiros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicos">Serviços</a>
+                </li>
+            </ul>
+            <a href="{{ url_for('login') }}" class="btn col-md-2 btn-logar">Entrar</a>
+        </div>
+        {% else %}
+        <div id="conta" class="dropdown">
+            <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img id="img_conta" src="../static/img/icones/icon-default.jpg" alt="">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <span class="menu_logado1">{{ current_user.nome }}</span>
+                <span class="menu_logado2">{{ current_user.email }}</span>
+                <hr />
+                <a class="dropdown-item rotinas" href="{{ url_for('rotinas') }}">Rotinas</a>
+                <hr>                
+                <a class="dropdown-item" href="{{ url_for('logout') }}" style="text-align: center;">Fazer Logout</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</nav>
